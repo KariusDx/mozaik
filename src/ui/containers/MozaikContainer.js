@@ -30,8 +30,8 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => ({
-    fetchConfiguration: () => {
-        dispatch(fetchConfiguration())
+    fetchConfiguration: (apiUrl) => {
+        dispatch(fetchConfiguration(apiUrl))
     },
     play: () => {
         dispatch(play())
