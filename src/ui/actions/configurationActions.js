@@ -22,12 +22,12 @@ const fetchConfigurationFailure = error => ({
     error,
 })
 
-export const fetchConfiguration = () => {
+export const fetchConfiguration = (apiUrl) => {
     return dispatch => {
         dispatch({ type: FETCH_CONFIGURATION })
 
         // http://localhost:5000/config
-        return fetch('/config')
+        return fetch(`${apiUrl}/config`)
             .then(res => {
                 if (res.status !== 200) {
                     return Promise.reject(new Error(

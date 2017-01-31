@@ -6,7 +6,7 @@ import ThemeProvider  from './components/ThemeProvider'
 import ThemeManager   from './lib/ThemeManager'
 
 
-const MozaikWrapper = () => {
+const MozaikWrapper = (props) => {
     const store = configureStore({
         themes: {
             themes:  ThemeManager.listThemes(),
@@ -17,7 +17,7 @@ const MozaikWrapper = () => {
     return (
         <Provider store={store}>
             <ThemeProvider themes={ThemeManager.listThemes()}>
-                <Mozaik/>
+                <Mozaik {...props}/>
             </ThemeProvider>
         </Provider>
     )

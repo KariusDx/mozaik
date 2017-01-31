@@ -24,6 +24,7 @@ export default class Mozaik extends Component {
         themes:             PropTypes.object.isRequired,
         currentTheme:       PropTypes.string.isRequired,
         setTheme:           PropTypes.func.isRequired,
+        apiUrl:             PropTypes.string.isRequired,
     }
 
     static contextTypes = {
@@ -44,8 +45,8 @@ export default class Mozaik extends Component {
     }
 
     componentDidMount() {
-        const { fetchConfiguration } = this.props
-        fetchConfiguration()
+        const { fetchConfiguration, apiUrl } = this.props
+        fetchConfiguration(apiUrl)
     }
 
     render() {
