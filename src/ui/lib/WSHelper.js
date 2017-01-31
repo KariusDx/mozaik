@@ -11,7 +11,12 @@ export const guessWSURL = (config = {}) => {
         port = config.wsPort
     }
 
-    let wsUrl = `${proto}://${window.document.location.hostname}`
+    let host = window.document.location.hostname
+    if (config.apiHost) {
+        host = config.apiHost
+    }
+
+    let wsUrl = `${proto}://${host}`
     if (port && port !== '') {
         wsUrl = `${wsUrl}:${port}`
     }
