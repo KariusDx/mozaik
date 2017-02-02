@@ -12,8 +12,8 @@ export const guessWSURL = (config = {}) => {
     }
 
     let host = window.document.location.hostname
-    if (config.apiHost) {
-        host = config.apiHost
+    if (config.proxyHost) {
+        host = config.proxyHost
     }
 
     let wsUrl = `${proto}://${host}`
