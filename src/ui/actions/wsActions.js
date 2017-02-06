@@ -53,7 +53,7 @@ export const send = (type, data) => {
 
 export const connect = configuration => {
     const wsUrl = guessWSURL(configuration)
-
+    console.log(`connecting to ${wsUrl}`);
     return dispatch => {
         dispatch({
             type: WS_CONNECT,

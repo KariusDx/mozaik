@@ -1,7 +1,7 @@
 export const guessWSURL = (config = {}) => {
     //return 'ws://localhost:5000'
     
-    if(config.wsUrl !== undefined){
+    if(config.wsUrl){
         return config.wsUrl;
     }
     
